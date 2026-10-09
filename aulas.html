@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Curso de IA grátis para iniciantes — 14 aulas em português | IA Iniciantes</title>
+<meta name="description" content="Aprenda inteligência artificial do zero, de graça: o que é IA, como usar o ChatGPT e outros assistentes, como pedir bem e como usar com segurança. 14 aulas curtas em português, com exercícios." />
+<link rel="canonical" href="https://iainiciantes.com.br/aulas.html" />
+<meta property="og:title" content="Curso de IA grátis para iniciantes — IA Iniciantes" />
+<meta property="og:description" content="14 aulas gratuitas em português para aprender inteligência artificial do zero, com exercícios práticos." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://iainiciantes.com.br/aulas.html" />
+<meta property="og:image" content="https://iainiciantes.com.br/icon-512.png" />
+<!-- Google Analytics: só carrega depois que a pessoa aceita os cookies -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function carregarAnalytics() {
+    if (window.__gaOn) return; window.__gaOn = true;
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EPF8LLLJHN';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-EPF8LLLJHN');
+  }
+  try { if (localStorage.getItem('iai:cookies') === 'sim') carregarAnalytics(); } catch (e) {}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#070b14" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<style>
+:root{--bg:#070b14;--bg2:#0d1220;--bg3:#111827;--border:rgba(99,255,180,0.12);--neon:#00ffaa;--neon2:#7c3aed;--text:#e2e8f0;--muted:#94a3b8;--white:#f8fafc;--mono:'JetBrains Mono',monospace;--sans:'Space Grotesk',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7}
+.top{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-family:var(--mono);font-weight:600;color:var(--neon);text-decoration:none;font-size:15px}
+.logo span{color:var(--white)}
+.back{color:var(--muted);text-decoration:none;font-size:13px}
+.wrap{max-width:760px;margin:0 auto;padding:36px 20px 80px}
+h1{font-size:clamp(28px,6vw,40px);color:var(--white);line-height:1.15;letter-spacing:-.02em;margin-bottom:12px}
+h1 em{font-style:normal;color:var(--neon)}
+.lead{color:var(--muted);font-size:16px;margin-bottom:20px}
+.notice{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--text);margin-bottom:28px}
+.toc{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.toc a{background:rgba(0,255,170,.1);color:var(--neon);text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:600;font-size:14px}
+.mod{margin-bottom:48px}
+.mod-tag{font-family:var(--mono);font-size:12px;color:var(--neon);letter-spacing:.08em;margin-bottom:8px}
+h2{font-size:clamp(22px,5vw,30px);color:var(--white);line-height:1.2;margin-bottom:10px}
+.mod-intro{color:var(--muted);margin-bottom:20px}
+.lesson{background:var(--bg2);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.lesson summary{cursor:pointer;padding:16px 18px;font-weight:600;color:var(--white);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.lesson summary::-webkit-details-marker{display:none}
+.lesson summary::after{content:'+';color:var(--neon);font-size:22px;flex-shrink:0}
+.lesson[open] summary::after{content:'−'}
+.lesson[open] summary{border-bottom:1px solid var(--border);color:var(--neon)}
+.lbody{padding:6px 18px 18px;font-size:15.5px}
+.lbody p{margin:12px 0}
+.lbody strong{color:var(--white)}
+.lbody ul{margin:10px 0 10px 20px}
+.cta{background:var(--bg3);border:1px solid var(--neon);border-radius:16px;padding:24px;text-align:center;margin-top:40px}
+.cta h3{color:var(--white);font-size:20px;margin-bottom:8px}
+.cta p{color:var(--muted);font-size:14px;margin-bottom:16px}
+.cta a{display:inline-block;background:var(--neon);color:var(--bg);font-weight:700;text-decoration:none;padding:13px 26px;border-radius:10px}
+footer{text-align:center;color:var(--muted);font-size:12px;font-family:var(--mono);padding:28px 20px;border-top:1px solid var(--border)}
+.done-btn{margin-top:14px;background:transparent;color:var(--neon);border:1px solid var(--neon);border-radius:10px;padding:11px 16px;font-family:var(--sans);font-weight:600;font-size:14px;cursor:pointer}
+.lesson.done .done-btn{background:var(--neon);color:var(--bg)}
+.lesson.done summary::before{content:'\2713';color:var(--neon);margin-right:8px}
+.lesson.done summary{justify-content:flex-start}
+.lesson.done summary::after{margin-left:auto}
+.prog{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:12px 16px;font-size:14px;margin-bottom:24px}
+.prog .bar{height:8px;background:var(--bg);border-radius:6px;margin-top:8px;overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:var(--neon);transition:width .3s}
+.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:350;max-width:560px;margin:0 auto;background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:16px 18px;display:none;gap:12px;flex-direction:column;font-size:13px;color:var(--muted);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.cookie-bar.show{display:flex}
+.cookie-bar a{color:var(--neon)}
+.cookie-btns{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.cookie-btns button{font-family:var(--sans);font-size:14px;font-weight:700;border-radius:8px;padding:9px 16px;cursor:pointer}
+.ck-ok{background:var(--neon);color:var(--bg);border:none}
+.ck-no{background:none;color:var(--text);border:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="top">
+  <a class="logo" href="./">ia<span>iniciantes</span>.com.br</a>
+  <a class="back" href="./">&larr; Voltar ao site</a>
+</div>
+<main class="wrap">
+  <h1>Suas <em>aulas gratuitas</em></h1>
+  <p class="lead">Módulos 1 e 2 completos, para você ler no seu ritmo. Cada aula tem uma explicação, um exercício e um resumo.</p>
+  <div class="notice">Por enquanto as aulas estão em texto. Faça os exercícios no celular, é só deixar um assistente de IA gratuito aberto em outro app ou aba.</div>
+  <div class="toc">
+    <a href="#modulo-1">Módulo 1</a>
+    <a href="#modulo-2">Módulo 2</a>
+  </div>
+<section class="mod" id="modulo-1">
+<div class="mod-tag">MÓDULO 1 · GRÁTIS</div>
+<h2>O que é Inteligência Artificial</h2>
+<p class="mod-intro">Neste módulo você perde o medo da IA e percebe que já usa IA todo dia.</p>
+<details class="lesson"><summary>Aula 1 — A IA já está no seu celular</summary><div class="lbody"><p><strong>Objetivo:</strong> reconhecer três lugares onde você já
+usa IA sem perceber.</p>
+<p><strong>Aula:</strong></p>
+<p>“Oi, eu sou o Antonio, e quero começar com uma pergunta: você já usou
+inteligência artificial hoje? Muita gente diz que não. Mas pensa comigo.
+Quando o celular sugere a próxima palavra no WhatsApp, isso é IA. Quando
+o YouTube mostra um vídeo que combina com você, isso é IA. Quando o GPS
+desvia de um trânsito, isso também é IA.</p>
+<p>Então a IA não é coisa de filme, nem coisa só de programador. Ela já
+trabalha para você. Neste curso, você vai aprender a mandar nela, em vez
+de só receber o que ela entrega.</p>
+<p>Na próxima aula, vou explicar o que a IA é de verdade, em palavras
+simples.”</p>
+<p><strong>Exercício:</strong> pegue o celular e procure três momentos
+de hoje em que a tecnologia adivinhou algo por você (sugestão de texto,
+vídeo recomendado, rota). Anote os três.</p>
+<p><strong>Resumo:</strong> IA não é futuro, é presente. Você já usa
+todo dia. Agora você vai aprender a usar de propósito.</p>
+</div></details>
+<details class="lesson"><summary>Aula 2 — O que a IA é (e o que ela não é)</summary><div class="lbody"><p><strong>Objetivo:</strong> explicar IA com uma frase simples, para
+qualquer pessoa.</p>
+<p><strong>Aula:</strong></p>
+<p>“Inteligência artificial é um programa de computador que aprendeu
+padrões olhando muitos exemplos, e usa esses padrões para fazer algo
+útil, como responder uma pergunta, reconhecer uma foto ou escrever um
+texto.</p>
+<p>Vou dar um exemplo. Imagine que você mostrasse a uma criança mil
+fotos de gatos. Depois de um tempo, ela reconheceria um gato novo, que
+nunca viu. A IA faz algo parecido, só que com milhões de exemplos e
+muito mais rápido.</p>
+<p>Agora, o que ela não é. A IA não pensa como uma pessoa, não tem
+opinião própria e não sabe tudo. Ela pode errar, e erra com muita
+confiança. Por isso, quem usa bem a IA confere o que ela responde.”</p>
+<p><strong>Exercício:</strong> explique IA em uma frase, com suas
+palavras, como se falasse com um familiar. Grave um áudio de até 20
+segundos e escute depois.</p>
+<p><strong>Resumo:</strong> IA aprende padrões com exemplos e usa isso
+para ajudar. Ela não pensa como gente e pode errar. Sempre confira.</p>
+</div></details>
+<details class="lesson"><summary>Aula 3 — Como a IA aprende, sem matemática</summary><div class="lbody"><p><strong>Objetivo:</strong> entender, com uma analogia, a diferença
+entre “treinar” e “usar” uma IA.</p>
+<p><strong>Aula:</strong></p>
+<p>“Toda IA tem duas fases. A primeira é o treino. É como um estudante
+que passa meses lendo livros e fazendo provas. Nessa fase, a IA analisa
+uma quantidade enorme de textos, imagens ou áudios e aprende os
+padrões.</p>
+<p>A segunda fase é o uso. É quando você chega e faz uma pergunta. Aí a
+IA responde com base no que aprendeu no treino. Ela não está pesquisando
+na internet na hora, a não ser que a ferramenta tenha essa função.</p>
+<p>Isso explica uma coisa importante: a IA pode não saber de fatos muito
+recentes, porque o treino dela parou em uma data. Guarde essa ideia: é por isso que vale conferir o que a IA responde.”</p>
+<p><strong>Exercício:</strong> abra um assistente de IA gratuito e
+pergunte: “Até que data vão as suas informações?” Anote a resposta.</p>
+<p><strong>Resumo:</strong> a IA tem a fase de treino e a fase de uso. O
+que ela sabe vem do treino, que tem data de corte.</p>
+</div></details>
+<details class="lesson"><summary>Aula 4 — Tipos de IA que você vai encontrar</summary><div class="lbody"><p><strong>Objetivo:</strong> diferenciar IA de texto, de imagem, de voz
+e de vídeo.</p>
+<p><strong>Aula:</strong></p>
+<p>“Existem vários tipos de IA, e vale conhecer os quatro
+principais.</p>
+<p>Primeiro, a IA de texto. É a que conversa, escreve, resume e traduz.
+O ChatGPT, o Gemini e o Claude são exemplos.</p>
+<p>Segundo, a IA de imagem. Você descreve o que quer e ela desenha. Dá
+para criar logos, capas e ilustrações.</p>
+<p>Terceiro, a IA de voz. Ela transforma texto em fala, e também fala em
+texto, como nos áudios que o celular transcreve.</p>
+<p>Quarto, a IA de vídeo, que cria clipes e avatares a partir de
+texto.</p>
+<p>Não se preocupe em decorar nomes de ferramentas. Elas mudam toda
+hora. O importante é saber qual tipo resolve o seu problema.”</p>
+<p><strong>Exercício:</strong> liste três tarefas da sua semana e
+escreva ao lado qual tipo de IA poderia ajudar em cada uma.</p>
+<p><strong>Resumo:</strong> IA de texto, imagem, voz e vídeo. Escolha
+pelo problema, não pelo nome da ferramenta.</p>
+</div></details>
+<details class="lesson"><summary>Aula 5 — O que a IA faz bem e o que ela faz mal</summary><div class="lbody"><p><strong>Objetivo:</strong> saber quando confiar na IA e quando
+conferir.</p>
+<p><strong>Aula:</strong></p>
+<p>“A IA é ótima em tarefas de linguagem: resumir um texto longo,
+reescrever um e-mail mais educado, dar ideias de nome para um negócio,
+explicar um assunto difícil de forma simples.</p>
+<p>Ela é fraca em outras coisas. Ela pode inventar dados, datas e até
+fontes que não existem. Isso tem nome: alucinação. A IA responde com
+segurança mesmo quando está errada.</p>
+<p>A regra de ouro é esta: use a IA como um assistente que trabalha
+rápido, mas que você revisa. Nunca copie e cole algo importante sem ler.
+Em assuntos de saúde, dinheiro e leis, sempre confirme com um
+profissional ou uma fonte oficial.”</p>
+<p><strong>Exercício:</strong> peça a um assistente de IA uma citação
+famosa com o nome do autor. Depois pesquise na internet se a citação é
+mesmo dele. Veja você mesmo se ela acertou.</p>
+<p><strong>Resumo:</strong> a IA é boa para linguagem e ideias, e pode
+inventar fatos. Revise sempre, principalmente em saúde, dinheiro e
+leis.</p>
+</div></details>
+<details class="lesson"><summary>Aula 6 — Seus primeiros passos com segurança</summary><div class="lbody"><p><strong>Objetivo:</strong> usar IA sem expor dados pessoais.</p>
+<p><strong>Aula:</strong></p>
+<p>“Antes de seguir para o próximo módulo, quero deixar três cuidados
+simples.</p>
+<p>Um: não envie para a IA dados que você não colocaria em um cartaz na
+rua. Isso inclui CPF, senhas, número de cartão e documentos.</p>
+<p>Dois: lembre que o que você escreve pode ser guardado pela
+ferramenta. Leia a política de privacidade e veja se existe a opção de
+desativar o uso das suas conversas para treino.</p>
+<p>Três: desconfie de golpes. Hoje existem vozes e imagens falsas feitas
+por IA. Se alguém pedir dinheiro por mensagem, ligue de volta no número
+que você já conhece.</p>
+<p>Com esses três cuidados, você está pronto para o módulo 2, onde vamos
+conversar com a IA de verdade.”</p>
+<p><strong>Exercício:</strong> abra as configurações de privacidade de
+uma ferramenta de IA que você usa e confira se o uso das suas conversas
+para treino está ligado ou desligado.</p>
+<p><strong>Resumo:</strong> não passe dados sensíveis, confira a
+privacidade da ferramenta e desconfie de pedidos urgentes de
+dinheiro.</p>
+</div></details>
+</section>
+<section class="mod" id="modulo-2">
+<div class="mod-tag">MÓDULO 2 · GRÁTIS</div>
+<h2>ChatGPT e assistentes de IA</h2>
+<p class="mod-intro">Neste módulo você aprende a pedir bem, porque a qualidade da resposta depende da qualidade do pedido.</p>
+<details class="lesson"><summary>Aula 1 — Sua primeira conversa com a IA</summary><div class="lbody"><p><strong>Objetivo:</strong> criar uma conta gratuita e fazer a
+primeira pergunta.</p>
+<p><strong>Aula:</strong></p>
+<p>“Hoje você vai conversar com uma IA pela primeira vez. Existem vários
+assistentes gratuitos, como ChatGPT, Gemini e Claude. Escolha um, crie a
+conta com seu e-mail e abra uma conversa nova.</p>
+<p>É só escrever, como no WhatsApp. Não precisa de comando especial.
+Escreva: ‘Explique o que é inflação como se eu tivesse 12 anos.’ Veja a
+resposta.</p>
+<p>Agora o mais importante: você pode continuar a conversa. Escreva:
+‘Agora dê um exemplo com o preço do pão.’ A IA lembra do que foi dito
+antes, dentro da mesma conversa.</p>
+<p>Perdeu o medo? Então vamos aprender a pedir do jeito certo.”</p>
+<p><strong>Exercício:</strong> crie sua conta em um assistente gratuito
+e faça duas perguntas seguidas sobre um assunto que você tem
+curiosidade.</p>
+<p><strong>Resumo:</strong> escreva como numa conversa normal. Pode
+continuar a conversa e a IA lembra do que foi dito nela.</p>
+</div></details>
+<details class="lesson"><summary>Aula 2 — A fórmula do bom pedido</summary><div class="lbody"><p><strong>Objetivo:</strong> montar um pedido com quatro partes: papel,
+tarefa, contexto e formato.</p>
+<p><strong>Aula:</strong></p>
+<p>“Um pedido vago gera uma resposta vaga. Para melhorar, use quatro
+partes.</p>
+<p>Papel: diga quem a IA deve ser. ‘Você é um professor paciente.’</p>
+<p>Tarefa: diga o que quer. ‘Explique como funciona um boleto.’</p>
+<p>Contexto: diga para quem e para quê. ‘Meu público é formado por
+idosos que nunca usaram internet banking.’</p>
+<p>Formato: diga como quer a resposta. ‘Em 5 passos curtos.’</p>
+<p>Juntando tudo: ‘Você é um professor paciente. Explique como funciona
+um boleto para idosos que nunca usaram internet banking, em 5 passos
+curtos.’ Compare com só ‘o que é boleto’ e veja a diferença.”</p>
+<p><strong>Exercício:</strong> escolha uma tarefa real sua e escreva um
+pedido com as quatro partes. Teste e compare com um pedido de uma linha
+só.</p>
+<p><strong>Resumo:</strong> papel, tarefa, contexto e formato. Quanto
+mais claro o pedido, melhor a resposta.</p>
+</div></details>
+<details class="lesson"><summary>Aula 3 — Refinar: a primeira resposta é só o rascunho</summary><div class="lbody"><p><strong>Objetivo:</strong> pedir ajustes até a resposta ficar
+boa.</p>
+<p><strong>Aula:</strong></p>
+<p>“Quase ninguém acerta de primeira, e tudo bem. Trate a primeira
+resposta como um rascunho.</p>
+<p>Se ficou grande, escreva: ‘Resuma em 3 linhas.’ Se ficou formal
+demais: ‘Reescreva de forma mais simples e amigável.’ Se faltou algo:
+‘Acrescente um exemplo prático.’</p>
+<p>Você também pode pedir opções: ‘Me dê 3 versões diferentes.’ Aí
+escolhe a melhor, ou junta as partes de cada uma.</p>
+<p>E se a IA errar, avise. Escreva: ‘Isso está errado porque…’ e peça
+para corrigir. Conversar com a IA é um vai e volta.”</p>
+<p><strong>Exercício:</strong> peça um texto curto de apresentação
+pessoal e faça três ajustes seguidos (tamanho, tom e um detalhe seu).
+Compare a primeira e a última versão.</p>
+<p><strong>Resumo:</strong> o primeiro resultado é rascunho. Peça
+ajustes, versões diferentes e correções.</p>
+</div></details>
+<details class="lesson"><summary>Aula 4 — Resumir e entender textos difíceis</summary><div class="lbody"><p><strong>Objetivo:</strong> usar a IA para entender contratos, bulas,
+notícias e documentos longos.</p>
+<p><strong>Aula:</strong></p>
+<p>“Uma das melhores utilidades da IA é ajudar a ler. Cole um texto
+longo e escreva: ‘Resuma em 5 tópicos e explique os termos
+difíceis.’</p>
+<p>Você também pode pedir: ‘Quais são os pontos de atenção neste texto?’
+ou ‘Explique como se eu não conhecesse o assunto.’</p>
+<p>Um cuidado: em contrato, bula e documento importante, a IA é um apoio
+para entender, não substitui um advogado ou um médico. E lembre do
+módulo 1: confira os trechos que pesam na sua decisão.”</p>
+<p><strong>Exercício:</strong> pegue um texto de verdade que você tem em
+casa (uma notícia, uma política de uso, uma bula) e peça um resumo em 5 tópicos. Antes de colar, apague dados pessoais, como CPF, endereço e números de conta. Depois, confira dois pontos no texto original.</p>
+<p><strong>Resumo:</strong> use a IA para entender textos longos.
+Confira o que for importante e procure um profissional em temas
+sérios.</p>
+</div></details>
+<details class="lesson"><summary>Aula 5 — Escrever e-mails e mensagens</summary><div class="lbody"><p><strong>Objetivo:</strong> produzir um e-mail ou mensagem
+profissional em menos de dois minutos.</p>
+<p><strong>Aula:</strong></p>
+<p>“Escrever mensagem toma tempo, principalmente quando o assunto é
+delicado, como cobrar um cliente ou responder uma reclamação.</p>
+<p>Use a fórmula da aula 2. Exemplo: ‘Você é um atendente educado.
+Escreva uma mensagem de WhatsApp lembrando um cliente de um pagamento
+atrasado, em tom gentil, com no máximo 4 linhas.’</p>
+<p>Depois, leia e ajuste com o seu jeito. Troque palavras que você não
+usaria. A mensagem precisa soar como você, não como robô.</p>
+<p>Dica extra: você pode colar uma mensagem que recebeu e pedir: ‘Sugira
+uma resposta educada e objetiva.’”</p>
+<p><strong>Exercício:</strong> escreva uma mensagem real que você precisa enviar esta semana. Se ela tiver dados pessoais, troque por [nome] ou [valor] ao pedir e ajuste depois. Peça duas versões, escolha a melhor e adapte com suas palavras.</p>
+<p><strong>Resumo:</strong> use a fórmula do pedido, peça versões e
+sempre personalize antes de enviar.</p>
+</div></details>
+<details class="lesson"><summary>Aula 6 — Estudar e tirar dúvidas</summary><div class="lbody"><p><strong>Objetivo:</strong> usar a IA como professor particular
+paciente.</p>
+<p><strong>Aula:</strong></p>
+<p>“A IA pode ser um ótimo apoio nos estudos, porque ela não cansa e não
+julga pergunta nenhuma.</p>
+<p>Peça: ‘Explique fotossíntese em 3 níveis: para uma criança, para um
+adolescente e para um adulto.’ Ou: ‘Faça 5 perguntas para eu testar o
+que aprendi sobre juros compostos, e corrija minhas respostas.’</p>
+<p>Um truque muito bom: peça para a IA te ensinar passo a passo e
+esperar a sua resposta antes de continuar. Escreva: ‘Me ensine em etapas
+e só avance quando eu responder.’</p>
+<p>Lembre: para provas e trabalhos, confira com o material oficial da
+escola ou do curso.”</p>
+<p><strong>Exercício:</strong> escolha um assunto que você quer aprender
+e peça uma explicação em etapas, com perguntas de teste ao final.</p>
+<p><strong>Resumo:</strong> peça explicações em níveis, perguntas de
+treino e ensino passo a passo. Confira no material oficial.</p>
+</div></details>
+<details class="lesson"><summary>Aula 7 — Organizar a rotina e gerar ideias</summary><div class="lbody"><p><strong>Objetivo:</strong> planejar uma semana e gerar ideias com
+ajuda da IA.</p>
+<p><strong>Aula:</strong></p>
+<p>“A IA também ajuda a organizar a cabeça. Escreva tudo o que você
+precisa fazer, sem ordem, e peça: ‘Organize em uma lista por prioridade
+e sugira uma distribuição pela semana.’</p>
+<p>Para ideias, funciona assim: ‘Me dê 10 ideias de nome para um negócio
+de doces caseiros, curtos e fáceis de lembrar.’ Depois, escolha duas e
+peça variações.</p>
+<p>A IA gera quantidade. Quem escolhe, decide e dá o toque pessoal é
+você.”</p>
+<p><strong>Exercício:</strong> liste tudo que você precisa fazer nos
+próximos 7 dias e peça um plano organizado. Ajuste o que não couber na
+sua realidade.</p>
+<p><strong>Resumo:</strong> a IA organiza e sugere. A decisão final é
+sua.</p>
+</div></details>
+<details class="lesson"><summary>Aula 8 — Sua biblioteca de pedidos</summary><div class="lbody"><p><strong>Objetivo:</strong> salvar os melhores pedidos para
+reutilizar.</p>
+<p><strong>Aula:</strong></p>
+<p>“Chegamos ao fim do módulo 2. Agora, o mais valioso: guarde os
+pedidos que deram certo.</p>
+<p>Crie uma nota no celular chamada ‘Meus pedidos de IA’. Cada vez que
+um pedido render uma resposta boa, copie e salve. Troque as partes que
+mudam por colchetes. Por exemplo: ‘Você é um [papel]. Escreva [tarefa]
+para [público], em [formato].’</p>
+<p>Daqui a algumas semanas você terá uma biblioteca que economiza tempo
+todo dia.</p>
+<p>No módulo 3, vamos usar a IA para criar imagens. Até lá,
+pratique.”</p>
+<p><strong>Exercício:</strong> crie a nota ‘Meus pedidos de IA’ e salve
+três pedidos do módulo, trocando os trechos variáveis por colchetes.</p>
+<p><strong>Resumo:</strong> salve seus melhores pedidos como modelos e
+reutilize. Esse é o hábito que faz a IA render de verdade.</p>
+</div></details>
+</section>
+  <div class="cta">
+    <h3>Quer continuar do módulo 3 ao 8?</h3>
+    <p>O plano Premium libera todos os módulos, por R$97/mês. Cancele quando quiser.</p>
+    <a href="https://pay.kiwify.com.br/X9Vt3oL">Conhecer o Premium</a>
+  </div>
+</main>
+<footer>© 2026 IA Iniciantes · Antonio Tarnos Salinas · CPF 022.394.918-33<br />Estrada Municipal José Arroyo Martins, 300, Bady Bassitt - SP, CEP 15117-001<br />Dúvidas: <a href="mailto:contatoiainiciantes@gmail.com" style="color:inherit">contatoiainiciantes@gmail.com</a> · <a href="privacidade.html" style="color:inherit">Privacidade</a> · <a href="termos.html" style="color:inherit">Termos</a></footer>
+<script>
+(function(){
+  var page=(location.pathname.split('/').pop()||'index').replace('.html','');
+  var store=null;
+  try{store=window.localStorage;store.setItem('iai:t','1');store.removeItem('iai:t');}catch(e){store=null;}
+  var lessons=document.querySelectorAll('details.lesson');
+  if(!lessons.length)return;
+  var box=document.createElement('div');box.className='prog';
+  box.innerHTML='<span></span><div class="bar"><i></i></div>';
+  var lead=document.querySelector('.lead');
+  if(lead&&lead.parentNode){lead.parentNode.insertBefore(box,lead.nextSibling);}
+  function key(i){return 'iai:'+page+':'+i;}
+  function update(){
+    var n=0;lessons.forEach(function(l){if(l.classList.contains('done'))n++;});
+    box.querySelector('span').textContent='Seu progresso: '+n+' de '+lessons.length+' aulas concluídas';
+    box.querySelector('i').style.width=(100*n/lessons.length)+'%';
+  }
+  lessons.forEach(function(l,i){
+    var b=document.createElement('button');b.type='button';b.className='done-btn';
+    function paint(){var d=l.classList.contains('done');b.textContent=d?'✓ Aula concluída (toque para desfazer)':'Marcar aula como concluída';}
+    var saved=false;try{saved=store&&store.getItem(key(i))==='1';}catch(e){}
+    if(saved)l.classList.add('done');
+    paint();
+    b.addEventListener('click',function(){
+      l.classList.toggle('done');
+      try{if(store){if(l.classList.contains('done'))store.setItem(key(i),'1');else store.removeItem(key(i));}}catch(e){}
+      paint();update();
+    });
+    var body=l.querySelector('.lbody');if(body)body.appendChild(b);
+  });
+  update();
+})();
+</script>
+<div class="cookie-bar" id="cookieBar" role="dialog" aria-label="Aviso de cookies">
+  <div>Usamos cookies do Google Analytics só para saber quantas pessoas visitam o site, se você permitir. Veja a <a href="privacidade.html">Política de Privacidade</a>.</div>
+  <div class="cookie-btns">
+    <button class="ck-no" type="button" onclick="decidirCookies('nao')">Não aceito</button>
+    <button class="ck-ok" type="button" onclick="decidirCookies('sim')">Aceito</button>
+  </div>
+</div>
+<script>
+  function decidirCookies(v) {
+    try { localStorage.setItem('iai:cookies', v); } catch (e) {}
+    document.getElementById('cookieBar').classList.remove('show');
+    if (v === 'sim') carregarAnalytics();
+  }
+  (function () {
+    var v = null; try { v = localStorage.getItem('iai:cookies'); } catch (e) {}
+    if (!v) document.getElementById('cookieBar').classList.add('show');
+  })();
+</script>
+</body>
+</html>
